@@ -22,17 +22,15 @@ class ReactJSONSchemaFormWidget(Widget):
 
     template_name = 'django_reactive.html'
 
-    def __init__(self, schema, ui_schema=None, **kwargs):
-        self.schema = schema
-        self.ui_schema = ui_schema
+    def __init__(self, template, **kwargs):
+        self.template = template
         super(ReactJSONSchemaFormWidget, self).__init__(**kwargs)
 
     def render(self, name, value, attrs=None, renderer=None):
         context = {
             'data': value,
             'name': name,
-            'schema': json.dumps(self.schema),
-            'ui_schema': json.dumps(self.ui_schema) if self.ui_schema else '{}',
+            'template': self.template,
         }
 
         return mark_safe(render_to_string(self.template_name, context))
