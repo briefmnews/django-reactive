@@ -1,0 +1,29 @@
+<div id="{{ name }}_editor" style="width: 100%"></div>
+
+<textarea id="id_{{ name }}" name="{{ name }}" required="" style="display: none">
+  {{ data }}
+</textarea>
+
+<script>
+  document.addEventListener("DOMContentLoaded", loadForm);
+
+  function loadForm() {
+    var re = /([\w-]+)-(\w+)/;
+    var matches = "{{ name }}".match(re);
+    var id = 'id_';
+    if (matches) {
+      id = 'id_'.concat(matches[1], '-');
+    }
+
+    var templates_select = document.getElementById(id.concat('{{ template }}'));
+    var template_selected = templates_select.selectedOptions[0].value;
+    var template = templates[template_selected];
+    djangoReactiveRenderForm(
+      "{{ name }}",
+      template.schema,
+      template.ui_schema || {},
+      {{ data|safe }}
+    );
+
+  }
+</script>
