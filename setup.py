@@ -56,7 +56,7 @@ setup(
         'django_reactive',
     ],
     include_package_data=True,
-    install_requires=['jsonschema>=2.6,<2.7', ],
+    install_requires=['jsonschema>=2.6, <3.1.1', ],
     license="MIT",
     zip_safe=False,
     keywords='django-reactive',
