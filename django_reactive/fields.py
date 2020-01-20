@@ -30,8 +30,8 @@ class TemplateField(CharField):
         kwargs.setdefault('default', dict)
         self.templates = templates
         if self.templates:
-            kwargs['choices'] = [(t[0], t[1]) for t in templates]
-            self.templates = {t[0]: t[2] for t in templates}
+            kwargs['choices'] = [(name, label) for (name, label, schema) in templates]
+            self.templates = {name: schema for (name, label, schema) in templates}
         super(TemplateField, self).__init__(**kwargs)
 
     def formfield(self, **kwargs):
