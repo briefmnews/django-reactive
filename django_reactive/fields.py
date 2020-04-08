@@ -27,7 +27,7 @@ class ReactJSONSchemaField(BaseJSONField):
 
 class TemplateField(CharField):
     def __init__(self, templates=None, **kwargs):
-        kwargs.setdefault('default', dict)
+        kwargs.setdefault("default", "")
         self.templates = templates
         if self.templates:
             choices = []
