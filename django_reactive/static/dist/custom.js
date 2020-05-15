@@ -3,13 +3,12 @@ tinymce.init({
   height: 500,
   menubar: false,
   plugins: [
-    'advlist autolink lists link image charmap print preview anchor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table paste code help wordcount code'
+    'advlist autolink lists link charmap preview',
+    'searchreplace visualblocks nonbreaking',
+    'insertdatetime media table paste code wordcount code'
   ],
-  toolbar: 'undo redo | formatselect | ' +
-  'bold italic backcolor | alignleft aligncenter ' +
-  'alignright alignjustify | bullist numlist outdent indent | ' +
-  'removeformat | code',
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
+  toolbar: 'undo redo | link | bold italic underline | blockquote | subscript superscript | bullist | nonbreaking | charmap | code',
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
+  default_link_target: "_blank",
+  nonbreaking_wrap: false,
 });
