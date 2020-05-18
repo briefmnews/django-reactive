@@ -102,7 +102,9 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                 fields: {
                     TitleField: TitleField,
                     DescriptionField: DescriptionField,
-                    TextareaWidget:TextareaWidget
+                },
+                widgets: {
+                    TextareaWidget: TextareaWidget,
                 },
                 idPrefix: "id_" + name + "_form",
                 FieldTemplate: FieldTemplate,
