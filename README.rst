@@ -135,12 +135,49 @@ Add it to your `INSTALLED_APPS`:
         ...
     )
 
+
 Features
 --------
 
 * React, RJSF and other JS assets are bundled with the package.
 * Integration with default Django admin theme.
 * Backend and frontend validation.
+
+TinyMCE Wysiwig react component integration
+-------------------------------------------
+
+tinyMce update: 
+
+We have to build the tinymce-react component in order to use it directly in the browser without the use of babel and jsx. For that purpose we use browserify
+
+Create a temporary directory which will be used to generate the component build of tinymce:
+
+In this directory:
+
+install browserify (globally):
+
+.. code-block:: shell-session
+
+    npm install -g browserify
+
+Download tinymce react component latest version: 
+install tinymce-react
+.. code-block:: shell-session
+
+    nom install react
+    npm install --save @tinymce/tinymce-react
+
+
+Build the minified component with browserify:
+.. code-block:: shell-session
+    browserify node_modules/@tinymce/tinymce-react   -o tinymce.js   --standalone Editor
+
+The --standalone option will expose the component under the window namespace, so you don’t need a module system to use it.
+
+This will create a fine called tinymce.js and expose the global variable Editor.
+
+Copy and paste this file to the "static/dist" directory of django_reactive and that’s it.
+
 
 Limitations
 -----------
