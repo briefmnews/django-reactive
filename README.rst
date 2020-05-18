@@ -160,17 +160,19 @@ install browserify (globally):
 
     npm install -g browserify
 
-Download tinymce react component latest version: 
-install tinymce-react
+Download tinymce react component latest version 
+
 .. code-block:: shell-session
 
-    nom install react
+    npm install react
     npm install --save @tinymce/tinymce-react
 
-
 Build the minified component with browserify:
+
 .. code-block:: shell-session
+
     browserify node_modules/@tinymce/tinymce-react   -o tinymce.js   --standalone Editor
+
 
 The --standalone option will expose the component under the window namespace, so you don’t need a module system to use it.
 
