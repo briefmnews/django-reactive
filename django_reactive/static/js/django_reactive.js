@@ -4,6 +4,8 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
         textarea = document.getElementById('id_' + name),
         save = document.getElementsByName('_save')[0],
         _el = React.createElement;
+    
+    var editor = Editor.Editor;
 
     function transformErrors(errors) {
         save.disabled = errors.length;
@@ -40,7 +42,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
     function DescriptionField(props) {
         var id = props.id, description = props.description;
         return _el('p', {id: id, className: 'field-description'}, description);
-    }
+    }   
 
     function FieldTemplate(props) {
         var id = props.id,
@@ -72,6 +74,19 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
             help
         );
     }
+    
+    function TextareaWidget(props) {
+        return _el(editor, 
+            {
+                value:props.value,
+                onChange: event => props.onChange(event.target.getContent()),
+                init: {
+                    toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help',
+                },                
+            }, 
+            null
+            );
+    }
 
     ReactDOM.render((
         _el(Form, {
@@ -87,6 +102,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                 fields: {
                     TitleField: TitleField,
                     DescriptionField: DescriptionField,
+                    TextareaWidget:TextareaWidget
                 },
                 idPrefix: "id_" + name + "_form",
                 FieldTemplate: FieldTemplate,

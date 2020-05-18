@@ -11,13 +11,15 @@ class ReactJSONSchemaFormWidget(Widget):
         css = {
             'all': (
                 settings.STATIC_URL + 'css/django_reactive.css',
+                settings.STATIC_URL + 'css/tinymce.css'
             )
         }
         js = (
             settings.STATIC_URL + 'dist/react-16.6.3.js',
             settings.STATIC_URL + 'dist/react-dom-16.6.1.js',
             settings.STATIC_URL + 'dist/react-jsonschema-form.js',
-            settings.STATIC_URL + 'js/django_reactive.js',
+            settings.STATIC_URL + 'dist/tinymce.js',
+            settings.STATIC_URL + 'js/django_reactive.js'
         )
 
     template_name = 'django_reactive/django_reactive.html'
