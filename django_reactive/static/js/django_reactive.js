@@ -81,7 +81,10 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                 value:props.value,
                 onChange: event => props.onChange(event.target.getContent()),
                 init: {
-                    toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help',
+                    height: "400",
+                    plugins: "code, lists, link, charmap",
+                    menubar: 'file edit view insert format tools table tc help',
+                    toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | link | blockquote | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor casechange  charmap emoticons',
                 },                
             }, 
             null
