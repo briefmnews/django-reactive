@@ -182,7 +182,17 @@ Copy and paste this file to the "static/dist" directory of django_reactive and t
 
 tinyMce configuration:
 
-tinyMce configuration options can be chnaged in file django_ractive.js in the init object of TextareaWidget function.
+tinyMce configuration options can be changed in file django_ractive.js in the init object of TextareaWidget function. See configuration examples here: 
+https://www.tiny.cloud/docs/demo/full-featured/
+
+.. code-block:: javascript
+
+    init: {
+        height: "400",
+        plugins: "code, lists, link, charmap",
+        menubar: 'file edit view insert format tools table tc help',
+        toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | link | blockquote | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor casechange  charmap emoticons',
+    }, 
 
 
 Limitations
