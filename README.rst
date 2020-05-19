@@ -180,6 +180,10 @@ This will create a fine called tinymce.js and expose the global variable Editor.
 
 Copy and paste this file to the "static/dist" directory of django_reactive and that’s it.
 
+tinyMce configuration:
+
+tinyMce configuration options can be chnaged in file django_ractive.js in the init object of TextareaWidget function.
+
 
 Limitations
 -----------
