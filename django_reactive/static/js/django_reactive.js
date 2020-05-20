@@ -4,7 +4,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
         textarea = document.getElementById('id_' + name),
         save = document.getElementsByName('_save')[0],
         _el = React.createElement;
-    
+
     var editor = Editor.Editor;
 
     function transformErrors(errors) {
@@ -42,7 +42,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
     function DescriptionField(props) {
         var id = props.id, description = props.description;
         return _el('p', {id: id, className: 'field-description'}, description);
-    }   
+    }
 
     function FieldTemplate(props) {
         var id = props.id,
@@ -74,19 +74,18 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
             help
         );
     }
-    
+
     function TextareaWidget(props) {
-        return _el(editor, 
+        return _el(editor,
             {
                 value:props.value,
                 onEditorChange: event => props.onChange(event),
                 init: {
                     height: "400",
-                    plugins: "code, lists, link, charmap",
-                    menubar: 'file edit view insert format tools table tc help',
-                    toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | link | blockquote | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor casechange  charmap emoticons',
-                },                
-            }, 
+                    plugins: "code, lists, link, charmap, nonbreaking",
+                    toolbar: 'undo redo | link | bold italic underline | blockquote | subscript superscript | bullist | nonbreaking | charmap | code',
+                },
+            },
             null
             );
     }
