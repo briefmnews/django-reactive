@@ -79,7 +79,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
         return _el(editor, 
             {
                 value:props.value,
-                onChange: event => props.onChange(event.target.getContent()),
+                onEditorChange: event => props.onChange(event.target.getContent()),
                 init: {
                     height: "400",
                     plugins: "code, lists, link, charmap",
