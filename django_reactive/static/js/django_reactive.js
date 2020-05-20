@@ -82,6 +82,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                 onEditorChange: event => props.onChange(event),
                 init: {
                     height: "400",
+                    menubar: false,
                     plugins: "code, lists, link, charmap, nonbreaking",
                     toolbar: 'undo redo | link | bold italic underline | blockquote | subscript superscript | bullist | nonbreaking | charmap | code',
                 },
