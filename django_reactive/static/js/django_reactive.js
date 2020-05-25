@@ -85,6 +85,10 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                     menubar: false,
                     plugins: "code, lists, link, charmap, nonbreaking",
                     toolbar: 'undo redo | link | bold italic underline | blockquote | subscript superscript | bullist | nonbreaking | charmap | code',
+                    relative_urls: false,
+                    convert_urls: false,
+                    default_link_target: "_blank",
+                    nonbreaking_wrap: false,
                 },
             },
             null
