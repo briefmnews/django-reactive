@@ -1,5 +1,3 @@
-import json
-
 from django.conf import settings
 from django.forms.widgets import Widget, Select
 from django.template.loader import render_to_string
