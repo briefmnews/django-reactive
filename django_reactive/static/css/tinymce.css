@@ -1,15 +1,15 @@
 .form-row .rjsf button {
-    background:#FFFFFF;
-    color:#000000;
+  background: #FFFFFF;
+  color: #000000;
 }
 
-.tox .tox-menubar+.tox-toolbar, .tox .tox-menubar+.tox-toolbar-overlord .tox-toolbar__primary {
-    margin-top:0px!important;
-    margin-bottom:0px!important;
-    border-bottom: 1px solid #ccc;
-    padding:5px 0pc 5px 0px;
+.tox .tox-menubar + .tox-toolbar, .tox .tox-menubar + .tox-toolbar-overlord .tox-toolbar__primary {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0pc 5px 0px;
 }
 
-  .tox-notifications-container {
-    display: none !important;
-  }
+.tox-notifications-container {
+  display: none !important;
+}
