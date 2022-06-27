@@ -57,3 +57,7 @@ release: clean ## package and upload a release
 sdist: clean ## package
 	python setup.py sdist
 	ls -l dist
+
+release:
+	git tag -a $(shell python -c "from django_reactive import __version__; print(__version__)") -m "$(m)"
+	git push origin --tags
