@@ -27,3 +27,5 @@ docs/_build
 
 # Docker-compose
 /data
+
+.python-version
