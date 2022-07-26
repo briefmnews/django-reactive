@@ -61,3 +61,6 @@ sdist: clean ## package
 release:
 	git tag -a $(shell python -c "from django_reactive import __version__; print(__version__)") -m "$(m)"
 	git push origin --tags
+
+install:
+	pip install -r requirements.txt
