@@ -1,11 +1,10 @@
-from django.contrib.postgres.fields import JSONField as BaseJSONField
-from django.db.models import CharField
+from django.db.models import CharField, JSONField
 
 from .forms.fields import ReactJSONSchemaFormField, TemplateFormField
 from .forms.widgets import ReactJSONSchemaFormWidget, TemplateFormWidget
 
 
-class ReactJSONSchemaField(BaseJSONField):
+class ReactJSONSchemaField(JSONField):
 
     def __init__(self, template=None, **kwargs):
         kwargs.setdefault('default', dict)
