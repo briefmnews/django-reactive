@@ -1,4 +1,4 @@
-from django.contrib.postgres.forms.jsonb import JSONField
+from django.forms import JSONField
 from django.forms import CharField
 
 from .widgets import ReactJSONSchemaFormWidget, TemplateFormWidget
