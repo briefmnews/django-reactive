@@ -83,7 +83,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                 init: {
                     height: 400,
                     menubar: false,
-                    plugins: "code lists link charmap nonbreaking",
+                    plugins: "code lists link charmap nonbreaking wordcount",
                     toolbar: "undo redo | link unlink | bold italic | removeformat | subscript superscript | nonbreaking | charmap | code",
                     relative_urls: false,
                     convert_urls: false,
