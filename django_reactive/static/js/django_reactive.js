@@ -83,13 +83,16 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                 init: {
                     height: 400,
                     menubar: false,
-                    plugins: "code, lists, link, charmap, nonbreaking",
+                    plugins: "code lists link charmap nonbreaking",
                     toolbar: "undo redo | link unlink | bold italic | removeformat | subscript superscript | nonbreaking | charmap | code",
                     relative_urls: false,
                     convert_urls: false,
                     default_link_target: "_blank",
                     nonbreaking_wrap: false,
+                    suffix: ".min",
+                    base_url: "/static/tinymce",
                 },
+                tinymceScriptSrc: '/static/tinymce/tinymce.min.js',
             },
             null
             );
