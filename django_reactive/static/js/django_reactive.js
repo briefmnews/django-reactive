@@ -10,6 +10,15 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
     function transformErrors(errors) {
         save.disabled = errors.length;
 
+        return errors.map(error => {
+            // Replace the error message for maxLength
+            if (error.name === "maxLength") {
+                var maxlenght = (error.params.limit - error.params.limit * 0.25) / 1000;
+                error.message = "La taille de l’image ne doit pas excéder " + maxlenght + "KB.";
+            }
+            return error;
+        });
+
         return errors;
     }
 
