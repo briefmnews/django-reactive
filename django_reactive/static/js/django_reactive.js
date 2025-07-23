@@ -53,6 +53,46 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
         return _el('p', {id: id, className: 'field-description'}, description);
     }
 
+
+    function ImageWidget(props) {
+        const inputId = props.id;
+
+        function handleFileChange(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = ev => {
+                props.onChange(ev.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function handleRemove() {
+            props.onChange(undefined);
+        }
+
+        return _el("div", {},
+            props.value && React.createElement(React.Fragment, null,
+                _el("img", {
+                    src: props.value,
+                    alt: "",
+                    style: {maxWidth: "200px", display: "block", marginBottom: "0.5em"}
+                }),
+                _el("button", {
+                    type: "button",
+                    onClick: handleRemove
+                }, "Supprimer l’image")
+            ),
+
+            _el("input", {
+                id: inputId,
+                type: "file",
+                accept: "image/*",
+                onChange: handleFileChange
+            })
+        );
+    }
+
     function FieldTemplate(props) {
         var id = props.id,
             classNames = props.classNames,
@@ -124,6 +164,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                 },
                 widgets: {
                     TextareaWidget: TextareaWidget,
+                    ImageWidget: ImageWidget,
                 },
                 idPrefix: "id_" + name + "_form",
                 FieldTemplate: FieldTemplate,
