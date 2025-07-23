@@ -1,5 +1,24 @@
 function djangoReactiveRenderForm(name, schema, ui_schema, data) {
 
+    function removeDataUrlFormat(obj) {
+        if (obj === null || typeof obj !== 'object') {
+            return;
+        }
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if (key === 'format' && obj[key] === 'data-url') {
+                    delete obj[key];
+                } else {
+                    removeDataUrlFormat(obj[key]);
+                }
+            }
+        }
+    }
+
+    const modifiedSchema = JSON.parse(JSON.stringify(schema));
+    removeDataUrlFormat(modifiedSchema);
+
+
     var Form = JSONSchemaForm.default, // required by json-react-schema-form
         textarea = document.getElementById('id_' + name),
         save = document.getElementsByName('_save')[0],
@@ -149,7 +168,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
 
     ReactDOM.render((
         _el(Form, {
-                schema: schema,
+                schema: modifiedSchema,
                 formData: data,
                 uiSchema: ui_schema,
                 liveValidate: true,
