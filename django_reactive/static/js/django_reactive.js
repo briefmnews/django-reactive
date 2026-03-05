@@ -151,7 +151,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                 init: {
                     height: 400,
                     menubar: false,
-                    plugins: "code lists link charmap nonbreaking wordcount",
+                    plugins: "paste code lists link charmap nonbreaking wordcount",
                     toolbar: "undo redo | link unlink | bold italic | removeformat | subscript superscript | nonbreaking | charmap | code",
                     relative_urls: false,
                     convert_urls: false,
@@ -159,6 +159,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                     nonbreaking_wrap: false,
                     suffix: ".min",
                     base_url: "/static/tinymce",
+                    paste_as_text: true,
                 },
                 tinymceScriptSrc: '/static/tinymce/tinymce.min.js',
             },
