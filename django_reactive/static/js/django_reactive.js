@@ -27,7 +27,9 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
     var editor = Editor.Editor;
 
     function transformErrors(errors) {
-        save.disabled = errors.length;
+        if (save) {
+            save.disabled = errors.length > 0;
+        }
 
         return errors.map(error => {
             // Replace the error message for maxLength
