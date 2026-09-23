@@ -162,6 +162,7 @@ function djangoReactiveRenderForm(name, schema, ui_schema, data) {
                     suffix: ".min",
                     base_url: "/static/tinymce",
                     paste_as_text: true,
+                    entity_encoding: "named+numeric",
                 },
                 tinymceScriptSrc: '/static/tinymce/tinymce.min.js',
             },
