@@ -11,7 +11,7 @@ class URIImageAsFileView(View):
     field_name = None
 
     def get(self, request, pk, pointer, model_class=None, field_name=None):
-        """
+        r"""
         :param request:
         :param pk: the pk of the instance
         :param pointer: the json pointer of the image. Ex: "people/image", "people/0/image", etc.
